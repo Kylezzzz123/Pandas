@@ -1,0 +1,14 @@
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv("Movies.csv")
+
+temp_list = df["Genre"].str.split(",").tolist() # [[],[],[]]
+genre_list = list(set([i for j in temp_list for i in j]))
+print(genre_list)
+genre = pd.DataFrame(genre_list)
+genre.rename(columns={0:"Genre"})
+
+
+
+
